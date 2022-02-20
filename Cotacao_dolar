@@ -32,7 +32,7 @@ print(f"real {real} equivalem a US$ {dolares}")
 
 # convertendo dólar para real
 dolar = float(input("Entre com o valor em dolar: "))
-dolares = real * 5.14
+dolares = dolar / float(cotacao_dolar)
 print(f"R$ {real} equivalem a US$ {dolares}")
 
 

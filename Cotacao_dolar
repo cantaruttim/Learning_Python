@@ -1,0 +1,43 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+# criando o navegador e abrindo o site desejado
+navegador = webdriver.Chrome("chromedriver.exe")
+navegador.get("https://www.google.com/")
+
+# identificando a barra de busca do google
+navegador.find_element_by_xpath(
+    
+    '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input'
+
+).send_keys("cotação dólar")
+
+
+navegador.find_element_by_xpath(
+    
+    '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input'
+
+).send_keys(Keys.ENTER)
+
+# getting attribute dólar
+cotacao_dolar = navegador.find_element_by_xpath(
+    '//*[@id="knowledge-currency__updatable-data-column"]/div[1]/div[2]/span[1]'
+
+).get_attribute("data-value")
+
+# convertendo real para dólar
+real = float(input("Entre com o valor em real: "))
+dolares = real * float(cotacao_dolar)
+print(f"real {real} equivalem a US$ {dolares}")
+
+# convertendo dólar para real
+dolar = float(input("Entre com o valor em dolar: "))
+dolares = real * 5.14
+print(f"R$ {real} equivalem a US$ {dolares}")
+
+
+# armazenando a cotação em uma lista
+lista_cotacao_dolar = [ ]
+lista_cotacao_dolar.append(cotacao_dolar)
+
+print(lista_cotacao_dolar)

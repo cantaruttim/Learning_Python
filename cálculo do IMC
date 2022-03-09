@@ -1,0 +1,21 @@
+#Escreva um programa que forneça a classificação do seu IMC baseado no peso e na altura
+
+peso = float(input("Qual o valor do seu peso em Kg?: "))
+altura = float(input('Qual a sua altura em metros?: '))
+
+imc = ( peso / (altura**2) )
+
+if imc >= 40:
+  print("Obesidade grave")
+elif 30 <= imc < 40:
+  print('Obesidade')
+elif 25 <= imc < 30:
+  print('Cuidado você está com sobrepeso!')
+elif 18.5 <= imc < 25:
+  print('IMC Normal')
+elif imc < 18.5:
+  print("você está com magreza!")
+else:
+  print('forneça as informações corretas')
+
+print(f'O valor do seu IMC é de: {imc: .4f}') #formatando o dado do imc para 4 casas decimais

@@ -1,0 +1,22 @@
+Conditions
+
+
+Exercício 1 = escreva um programa que mostre as raízes reais
+
+a = float(input("digite o valor de a: "))
+b = float(input("digite o valor de b: "))
+c = float(input("digite o valor de c: "))
+
+delta = (b**2 - (4*a*c))
+
+if a == 0:
+  print("não é uma equação de segundo grau")
+elif delta > 0:
+  x1 = ((-b + math.sqrt(delta) / 2*a)
+  x2 = ((-b - delta**0.5) / 2*a) # podemos achar a raíz quadrada utilizando a potencia por 0.5
+  print(f'os valores de x1 e de x2 são {x1} e {x2} respectivamente')
+elif delta == 0:
+  x = -b / (2*a)
+  print(f'o valor de x é: {x}')
+else:
+  print('Não existem raízes reais')

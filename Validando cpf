@@ -30,11 +30,11 @@ else:
 
 # segundo verificador
 
-multiplicadores1 = [10,9,8,7,6,5,4,3,2]
+multiplicadores2 = [11,10,9,8,7,6,5,4,3,2]
 soma = 0
 
 for i in range(10):
-  soma = soma + cpf[i] * multiplicadores1[i]
+  soma = soma + cpf[i] * multiplicadores2[i]
 
 verificador2 = ((soma*10) % 11) % 10
 if verificador2 == cpf[10]:

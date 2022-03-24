@@ -1,0 +1,55 @@
+leiaCPF = True
+while leiaCPF:
+  cpfString = input('Entre com seu CPF: ')
+  cpf = []
+  for i in range(len(cpfString)):
+    if cpfString[i] in "0123456789": # Verifica se um caractere digitado é numérico
+      cpf.append(int(cpfString[i])) # Acrescenta à lista o caractere convertido para número
+  
+  print('Acima temos', len(cpf), 'dígitos')
+  if len(cpf) == 11:
+    leiaCPF = False
+  else:
+    print('Erro: o CPF tem que ter 11 dígitos.')
+
+print('CPF convertido para dígitos: ', cpf) # Repare que aqui não ficaram os pontos, hífens e qualquer outro caractere não-numérico
+
+
+# primeiro verificador
+
+multiplicadores1 = [10,9,8,7,6,5,4,3,2]
+soma = 0
+for i in range(9):
+  soma = soma + cpf[i] * multiplicadores1[i]
+
+verificador1 = ((soma*10) % 11) % 10
+if verificador1 == cpf[9]:
+  print('Primeiro verificador confere')
+else:
+  print('Erro no primeiro verificador')
+
+# segundo verificador
+
+multiplicadores1 = [10,9,8,7,6,5,4,3,2]
+soma = 0
+
+for i in range(10):
+  soma = soma + cpf[i] * multiplicadores1[i]
+
+verificador2 = ((soma*10) % 11) % 10
+if verificador2 == cpf[10]:
+  print('Segundo verificador confere')
+else:
+  print('Erro no segundo verificador')
+  
+  # verificando se os números são iguais
+  
+  lista = cpf
+  
+  todosIguais = True
+for i in range(1, len(lista)):
+  if lista[0] != lista[i]:  #  !=  simboliza comparação de diferença
+    todosIguais = False
+    break  # interrompe antecipadamente o laço de repetição
+
+print('São todos repetidos?', todosIguais)

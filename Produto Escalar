@@ -1,0 +1,9 @@
+# Para achar um produto escalar de duas coleções, podemos realizar o seguinte programa
+
+A = [1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0]
+B = [0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+
+soma = 0
+for i in range(len(A)):
+  soma = soma + A[i]*B[i]
+print(f"O produto escalar dos vetores A e B são {soma}")

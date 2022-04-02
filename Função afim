@@ -1,0 +1,13 @@
+# para criar um gráfico de uma função afim
+
+import matplotlib.pyplot as plt
+x = []  # lista eixo x vazia
+y = []  # lista eixo y vazia
+
+for i in range(50, 721): # i varia de 50 a 720
+  x.append(i)  # append acrescenta um elemento a uma lista
+  y.append(i)
+plt.plot(x, y)
+plt.show()
+print(f'x é igual a {x}')
+print(f'y é igual a {y}')

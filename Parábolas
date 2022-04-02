@@ -1,0 +1,13 @@
+# Plotamos uma parábola (y = x²)
+
+
+import matplotlib.pyplot as plt
+x = []  # lista vazia
+y = []  # lista vazia
+for i in range(0, 20): # i varia de 0 a 19
+  x.append(i)  # append acrescenta um elemento a uma lista
+  y.append(i**2)
+plt.plot(x, y)
+plt.show()
+print('x =', x)
+print('y =', y)

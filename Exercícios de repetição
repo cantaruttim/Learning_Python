@@ -1,0 +1,82 @@
+# Exercício 4 - Crie uma sequência de números pares entre 100 e 150 e imprima na tela
+
+for i in range(100, 151):
+    if i % 2 == 0:
+        print(i)
+        
+        
+# Exercício 5 - Crie uma variável chamada temperatura e atribua o valor 40. Enquanto temperatura for maior que 35, 
+# imprima as temperaturas na tela
+
+temperatura = 50
+
+while temperatura > 35:
+    print(temperatura)
+    break
+    
+    
+# Exercício 6 - Crie uma variável chamada contador = 0. Enquanto counter for menor que 100, imprima os valores na tela,
+# mas quando for encontrado o valor 23, interrompa a execução do programa
+
+contador = 0 
+
+while contador < 100:
+    print(contador)
+    '''
+    enquanto o valor do contador for menor que 100,
+    
+    
+    o número será impresso na tela  
+    
+    
+    '''
+    
+    
+    contador += 1
+    
+    if contador == 23:
+        
+        '''
+        quando o contador atingir o valor de 23, 
+        
+        ele será interrompido
+        
+        '''
+        break
+        
+
+# Exercício 7 - Crie uma lista vazia e uma variável com valor 4. Enquanto o valor da variável for menor ou igual a 20, 
+# adicione à lista, apenas os valores pares e imprima a lista
+
+lista = [ ]
+a = 4
+
+while a <= 20:
+    a = a + 1
+    
+    if a % 2 == 0:
+        lista.append(a)
+        
+        print(lista)
+
+#OU
+
+lista = [ ]
+
+for i in range(4, 21):
+    if i % 2 == 0:
+        
+        lista.append(i)
+        
+        print(lista)
+
+
+# Exercício 10 - Faça um programa que conte quantas vezes a letra "r" aparece na frase abaixo. Use um placeholder na 
+# sua instrução de impressão
+
+# “É melhor, muito melhor, contentar-se com a realidade; se ela não é tão brilhante como os sonhos, tem pelo menos a 
+# vantagem de existir.” (Machado de Assis)
+
+frase = "É melhor, muito melhor, contentar-se com a realidade; se ela não é tão brilhante como os sonhos, tem pelo menos a vantagem de existir." 
+
+frase.count('r')

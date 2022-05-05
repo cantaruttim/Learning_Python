@@ -1,0 +1,29 @@
+import numpy as np
+A = np.matrix( [[3, 6, 4, 2],
+                [1, 2, 3, 4],
+                [2, 4, 5, 8]] )
+                
+                
+# soma as linhas
+
+soma = 0
+lista=[]
+for i in range(A.shape[0]):
+    for v in range(A.shape[1]):
+        item= A[i,v]
+        soma = soma + item
+    lista.append(soma)
+    soma=0
+print(lista)
+
+# soma as colunas
+
+soma = 0
+lista=[]
+for i in range(A.shape[1]):
+    for v in range(A.shape[0]):
+        item= A[v,i]
+        soma = soma + item
+    lista.append(soma)
+    soma=0
+print(lista)

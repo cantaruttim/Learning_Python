@@ -125,3 +125,30 @@ y = np.array([[5, 6]])
 g = np.concatenate((x, y), axis=0)
 
 print(g)
+
+## trabalhando com determinantes em uma matriz
+
+from numpy import linalg as LA
+
+## Temos uma matriz de ordem 3x3
+D = np.array([[1, 0, -1], [0, 1, 0], [1, 0, 1]])
+print(D)
+
+LA.cond(D)
+LA.cond(D, np.inf) #max(sum(abs(x), axis=1))
+LA.cond(D, -np.inf) #min(sum(abs(x), axis=1))
+
+## 6) crie um programa que coloque 0 nas bordas e 1 dentro da matriz 
+ 
+ def borda(dimensao):
+  mat = np.ones( (dimensao, dimensao), dtype=np.int32 )
+  for l in range(len(mat)):
+    for c in range(len(mat[0])):
+      if l==0 or c==0 or l==len(mat)-1 or c==len(mat[0])-1:
+        mat[l][c] = 0
+
+  print(np.matrix(mat))
+
+borda(4)
+borda(5)
+borda(8)

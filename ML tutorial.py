@@ -66,19 +66,75 @@ https://www.youtube.com/playlist?list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v
 from statistics import mean
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import style
+
+style.use('fivethirtyeight')
 
 xs = np.array([1,2,3,4,5,6], dtype=np.float64)
 ys = np.array([5,4,6,5,6,7], dtype=np.float64)
 
-def best_fit_slope(xs, ys):
-    m = mean( ((xs) * mean(ys) ) - mean(xs*ys)) / ( (mean(xs)*mean(xs)) - mean(xs**2)) ) 
-    return m
+# calculando m and b
+# b = mean(y) - m*mean(x)
 
-m = best_fit_slope(xs,ys)
-#print(m)
+def best_fit_slope_and_intercept(xs, ys):
+    m = mean( ((mean(xs) * mean(ys)) - mean(xs*ys)) / ((mean(xs)*mean(xs)) - mean(xs**2)) )
+
+    b = mean(ys) - m * mean(xs)
+
+    return m, b
+
+m, b = best_fit_slope_and_intercept(xs,ys)
+#print(m, b)
+
+regression_line = [(m*x) + b for x in xs]
+
+predict_x = 8
+predict_y = (m*predict_m)+b
 
 plt.scatter(xs, ys)
+plt.scatter(predict_x, predict_y, color='g')
+plt.plot(xs, regression_line)
 plt.show()
+
+### Determinando acurácia 
+# R Squared Theory
+# marca quão distante os dados estão da reta (quão bom a reta # está alocada entre os dados)
+
+# r² = 1 - (SE\hat{y} / SE mean(y) )
+
+def squared_error(ys_original, ys_line):
+    return sum((ys_line - ys_original) ** 2) 
+ 
+def coeficient_of_determination(ys_original,ys_line):
+    y_mean_line = [ mean(ys_original) for y in ys_original ]
+    squared_error_regression = squared_error(ys_original, ys_line)
+    squared_error_y_mean = squared_error(ys_original, ys_mean_line)
+    return 1 - (squared_error_regression / squared_error_y_mean)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  
 

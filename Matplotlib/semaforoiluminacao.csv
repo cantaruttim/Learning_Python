@@ -1,0 +1,38 @@
+semafororo;localizacao1;localizacao2;bairro;latitude;longitude;tipo;funcionamento
+20;Av. Marquez de Olinda;Rua Madre de Deus;Recife;-8.063611;-34,873672;E/Git;Veicular
+37;Av. Gov. Agamenon Magalhães;Av. Rui Barbosa;Graças;-8.052422;-34,895758;E/Git;Veicular
+50;Rua José Osório;Rua Visconde de Albuquerque;Madalena;-8.053297;-34,906797;E/Git;Veic.C/Ped.
+69;Av. Gov. Agamenon Magalhães;Rua Paissandú;Paissandu;-8.062396;-34,897553;E/Git;Veic.C/Ped.Paral.
+75;Av. Gov. Agamenon Magalhães;Av. Carlos de Lima Cavalcante;Derby;-8.056709;-34,897924;E/Git;Veicular
+82;Av. Dr. José Rufino;Rua João Teixeira;Estância;-8.084694;-34,928126;E/Git;Veic.C/Ped.Ocas.
+104;Av. Boa Viagem;Av. Herculano Bandeira;Pina;-8.091769;-34,882053;E/Git;Veic.C/Ped.Paral.
+131;Av. Beberibe;Av. Prof. José dos Anjos;Ponto de Parada;-8.027954;-34,892919;E/Git;Veicular
+137;Av. Herculano Bandeira;Rua Miranda Falcão;Pina;-8.088874;-34,885203;E/Git;Ocasional/Ped.
+170;Rua do Príncipe;Em frente à UNICAP;Soledade;-8.055811;-34,887862;E;Ocasional/Ped.
+173;Av. Gov. Agamenon Magalhães;Rua Dr. Bandeira Filho;Graças;-8.051467;-34,895077;E/Git;Veicular
+237;Rua Real da Torre;Em frente ao Colégio Joaquim Távora;Madalena;-8.055776;-34,909047;E/Git;Ocasional/Ped.
+271;Av. Abdias de Carvalho;Próximo a UPA - Torrões (Cid/Sub);Torrões;-8.063964;-34,935793;E/Git;Ocasional/Ped.
+272;Av. Abdias de Carvalho;Próximo a UPA - Torrões (Sub/Cid);Torrões;-8.064074;-34,935713;E/Git;Ocasional/Ped.
+277;Av. Antônio de Góis;Rua Miranda Falcão;Pina;-8.087743;-34,884504;E/Git;Pedestre
+297;Av. Domingos Ferreira;Gilson M. Guimarães (antigo SUPERBOX);Boa Viagem;-8.105434;-34,889648;E/Git;Veic.C/Ped.Paral.
+309;Av. Conselheiro Rosa e Silva;Em frente ao Hospital do IPSEP;Espinheiro;-8.047866;-34,896847;E/Git;Ocasional/Ped.
+325;Av. Dois Rios;Próx. a Rua Rio Pajeú;Ibura;-8.113534;-34,938989;E/Git;Ocasional/Ped.
+327;Av. Abdias de Carvalho;Em frente a Estácio - Sub/Cid.;Prado;-8.062513;-34,917033;E;Ocasional/Ped.
+328;Av. Abdias de Carvalho;Em frente à FIR - Cid/Sub.;Prado;-8.062363;-34,917038;E;Ocasional/Ped.
+336;Av. Recife;Em frente ao Hospital Geral de Areias;Caçote;-8.100611;-34,928171;E/Git;Ocasional/Ped.
+338;Av. Domingos Ferreira;Rua Bruno Veloso;Boa Viagem;-8.121631;-34,89905;E/Git;Veicular
+370;Av. 17 de Agosto;Praça do Monteiro;Monteiro;-8.027749;-34,928219;E/Git;Ocasional/Ped.
+407;Rua Barão de Souza Leão;Em frente ao Colégio Santos Dumont;Boa Viagem;-8.132167;-34,907281;E/Git;Ocasional/Ped.
+409;Rua Conde de Irajá;Praça da Torre;Torre;-8.047001;-34,913636;E;Ocasional/Ped.
+424;Av. Norte Miguel Arraes de Alencar;Rua Bujarú;Macaxeira;-8.018246;-34,928354;E;Ocasional/Ped.
+432;Rua Guilherme Pinto;Em frente ao Instituto dos Cegos;Graças;-8.052197;-34,902136;E/Git;Ocasional/Ped.
+475;Av. Dois Rios;Rua Rio Chuí;Ibura;-8.115407;-34,940297;E/Git;Ocasional/Ped.
+486;Av. Conde da Boa Vista;Rua Sete de Setembro;Boa Vista;-8.061073;-34,883421;E/Git;Ocasional/Ped.
+501;Av. Mascarenhas de Morais;Proxímo a Estrada dos Frigoríficos,;Imbiribeira;-8.10356;-34,910724;E/Git;Ocasional/Ped.
+502;Av. Mascarenhas de Morais;Rua Itália;Imbiribeira;-8.103214;-34,910852;E/Git;Ocasional/Ped.
+530;Av. Mascarenhas de Morais;Em Frente a UNIBRATEC;Imbiribeira;-8.12741;-34,9153;E/Git;Ocasional/Ped.
+531;Av. Mascarenhas de Morais;Av. Recife;Ibura;-8.127376;-34,915543;E/Git;Ocasional/Ped.
+544;Rua Félix de Brito;Av. Prof. João Medeiros;Boa Viagem;-8.115377;-34,900496;E/Git;Veicular
+594;Av. Dois Rios;Em frente ao Nº 110;Ibura;-8.10982;-34,936173;E/Git;Ocasional/Ped.
+617;Av. Recife;Em frente ao Hospital Geral de Areias;Areias;-8.10047;-34,928072;E/Git;Ocasional/Ped.
+624;Av. Visc. de Suassuna;Em frente ao nº 500;Santo Amaro;-8.052592;-34,886268;E;Ocasional/Ped.

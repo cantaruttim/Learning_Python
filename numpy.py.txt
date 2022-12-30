@@ -151,4 +151,10 @@ np.linspace(1,4, num=400, retstep=True)
 0.012048192771084338 < 0.007518796992481203
 
 
-
+ help(np.random)
+ 
+ np.random.rand(5)
+ np.random.rand(3,3)
+ np.random.randn(5)
+ np.random.ranf(5)
+ np.random.randint(5)

@@ -94,6 +94,29 @@ Z = np.sin(R)
 
 ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap='viridis')
 
+## Scientifical Programming
+### Numpy : Numerical Python; Travis Oliphant + Others.
+   - Arrays
+   - Linear Algebra
+   - Geração Randômica de números
+   - Broadcasting
+
+#### List vs Numpy Arrays
+1. Similarities
+
+- Storing the data
+- Mutable
+- Can be indexed
+- Slicing
+
+2. Differences
+
+- Lists can stor data from different dtype : [1,2.1,"a",3]
+- Array : [1,2,3,4] - Faster, Less Memory
+- Operations
+- Lists are built-in structures on the other hand numpy must be installed to be used.
+
+### Scipy : Scientific Python
 
 
 

@@ -136,3 +136,19 @@ b
 
 #```
 
+help(np.arange)
+
+
+np.arange(4,22,1) , np.arange(4,22,2), np.arange(4, dtype=complex)
+
+np.arange(20, dtype="complex")
+
+help(np.linspace)
+
+# Return evenly spaced numbers over a specified interval.
+np.linspace(1,4, num=400, retstep=True)
+
+0.012048192771084338 < 0.007518796992481203
+
+
+

@@ -1,0 +1,99 @@
+### Teorema de Binet
+$$det (A.B) = det (A) * det (B)$$
+
+<br /> 
+
+* Para se atender o teorema de Binet, devemos _ter matrizes de mesma ordem_
+
+import numpy as np
+
+np.matrix([[3,2,3], [4,5,6], [1,2,6]]) * np.matrix([[4,3,12],[30,44,13],[44,41,65]])
+
+# matriz nula
+
+np.zeros(3)
+
+np.ones(3)
+
+
+## Para somar matrizes, podemos utilizar o método concatenate
+
+b = np.matrix([[1, 2], [3, 4]]) 
+c = np.matrix([[2, 4], [2, 8]])
+
+np.concatenate((b,c), axis =1)
+
+## Matrizes
+
+data = np.array([[1, 2], [3, 4], [5, 6]])
+data
+
+# slicing com matrizes
+
+# data[2,1] # retorna 6
+# data[2,0] # retorna 5
+# data[1,1] # retorna 4
+# data[1,0] # retorna 3
+# data[0,1] # retorna 2
+data[0,0] # retorna 1
+
+
+data.max(axis=1), data.max(axis=0)
+
+# retornando os valores únicos
+
+np.unique([[1, 2], [2, 4], [4, 6]])
+
+data
+
+# reestruturando a matriz em duas linhas e 3 colunas
+data.reshape(2,3)
+
+# reestruturando a matriz em 3 linhas e duas colunas
+data.reshape(3,2)
+
+# outra forma de criar uma matriz transposta
+
+data.T
+
+# Outra forma de mostrar a matrix reversa - reverse array
+
+np.flip(data)
+
+help(max), help(min)
+
+# Diferentemente do R, o IPython utiliza o mesmo caracter especial para usar como
+# parâmetro para entender o comendo, ?max
+
+max? 
+data?
+
+import matplotlib.pyplot as plt
+
+a = np.array([2, 1, 5, 7, 4, 6, 8, 14, 10, 9, 18, 20, 22])
+%matplotlib inline
+
+plt.plot(a)
+
+# a line plot
+
+x = np.linspace(0, 5, 20)
+y = np.linspace(0, 10, 20)
+plt.plot(x, y, 'red') # line
+plt.plot(x, y, 'o')      # dots
+
+# gráfico 3d
+
+fig = plt.figure()
+ax = fig.add_subplot(projection='3d')
+X = np.arange(-5, 5, 0.15)
+Y = np.arange(-5, 5, 0.15)
+X, Y = np.meshgrid(X, Y)
+R = np.sqrt(X**2 + Y**2)
+Z = np.sin(R)
+
+ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap='viridis')
+
+
+
+

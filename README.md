@@ -1,8 +1,18 @@
-# Learning_Python_Portfolio
+### Learning Python 
 
-Neste repositório vocês podem acompanhar minha jornada em aprender python, desde as estruturas básicas até o machine learning, representado por dois cursos. Um aplicado para a estatística com Python e o segundo com os estudos dos algoritmos de machine learning.
+Neste repositório você pode acompanhar meus estudos assim como algumas matérias que procuro aplicar com o Python. Tenho dedicado a maior parte do tempo em aprender conceitos e aplicações de _machine learning_ assim como aplicar a matématica elementar e estatística com algorítmos em **python** e tenho ficado muito feliz com o progresso.
 
-##### Estrutura de dados : https://github.com/cantaruttim/Learning_Python/tree/main/Estrutura%20de%20Dados
-##### Algoritmos : https://github.com/cantaruttim/Learning_Python/tree/main/Algortimos
-##### Inteligência Artificial : https://github.com/cantaruttim/Learning_Python/tree/main/Intelig%C3%AAncia%20Artificial
-##### Machine Learning com Python : https://github.com/cantaruttim/Learning_Python/tree/main/Machine%20Learning%20com%20Python
+O repositório é divido conforme eu acredito que fique mais claro de entender as relações entre as bibliotecas e conforme as aulas que são de programação. No momento o repositório está dividido conforme as pastas a seguir
+  
+<dl>
+ <dt>Algoritmos</dt>
+    <dd>Estrutura de Dados</dd>
+    <dd>Inteligência Artificial</dd>
+    <dd>Programas</dd>
+ <dt>Bibliotecas</dt>
+    <dd>Matemática</dd>
+    <dd>Matplotlib</dd>
+ <dt>Cursos concluídos</dt>
+ <dt>Machine Learning com Python</dt>
+  
+</dl>

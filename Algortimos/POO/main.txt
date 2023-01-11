@@ -1,0 +1,6 @@
+# A POO tenta representar objetos reais na linguagem de programação
+
+from pessoa import Pessoa
+
+p1 = Pessoa('Luiz', 29)
+p2 = Pessoa('Lucas', 33)

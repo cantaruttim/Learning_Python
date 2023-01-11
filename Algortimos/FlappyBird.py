@@ -228,22 +228,49 @@ def main(genomas, config): #fitness function
                      for passaro in passaros:
                          passaro.pular()
 
-
-
-
+        indice_cano = 0
+        if len(passaros) > 0:
+        # descobrir qual cano olhar 
+                
+            if len(canos) > 1 and passaros[0].x > (canos[0].x + canos[0].CANO_TOPO.get_width()):
+                indice_cano = 1           
+            
+        else: 
+            rodando = False
+            break
 
 
         # mover as coisas
-        for passaro in passaros:
+        for i, passaro in enumerate(passaros):
             passaro.mover()
+            # aumentando o fitness
+            listas_genomas[i].fitness += 0.1
+            output = redes[i].activate((passaro.y, 
+                                        abs(passaro.y - canos[indice_cano].altura), 
+                                        abs(passaro.y - canos[indice_cano].pos_base))) # fica entre -1,1
+            
+            if output[0] > 0.5:
+                passaro.pular()                               
+        
         chao.mover()
+
+
+
+
 
         adicionar_cano = False
         remover_canos = []
+ 
         for cano in canos:
             for i, passaro in enumerate(passaros):
                 if cano.colidir(passaro):
                     passaros.pop(i)
+
+                    if ai_jogando:
+                        lista_genomas[i].fitness -= 1 #penalisando 
+                        lista_genomas.pop(i)  # excluindo os genomas
+                        redes.pop(i) # excluindo os genomas
+ 
                 if not cano.passou and passaro.x > cano.x:
                     cano.passou = True
                     adicionar_cano = True
@@ -254,6 +281,10 @@ def main(genomas, config): #fitness function
         if adicionar_cano:
             pontos += 1
             canos.append(Cano(600))
+
+            for genoma in lista_genomas: # pontuando muito a fitness caso ele acerte
+                genoma.fitness += 5
+
         for cano in remover_canos:
             canos.remove(cano)
 

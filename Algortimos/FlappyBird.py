@@ -199,7 +199,6 @@ def main(genomas, config): #fitness function
             lista_genomas.append(genoma)
             passaros.append(Passaro(230, 350))
             
-            
     else:
         passaros = [Passaro(230, 350)]
     
@@ -221,10 +220,18 @@ def main(genomas, config): #fitness function
                 rodando = False
                 pygame.quit()
                 quit()
-            if evento.type == pygame.KEYDOWN:
-                if evento.key == pygame.K_SPACE:
-                    for passaro in passaros:
-                        passaro.pular()
+
+            
+         if not ai_jogando:  
+             if evento.type == pygame.KEYDOWN:
+                 if evento.key == pygame.K_SPACE:
+                     for passaro in passaros:
+                         passaro.pular()
+
+
+
+
+
 
         # mover as coisas
         for passaro in passaros:

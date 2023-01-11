@@ -18,7 +18,7 @@ class Produto:
     #Setter configura o preco
     @preco.setter
     def preco(self, valor):
-        if isinstance(valor, str):
+        if isinstance(valor, str): #confirma se o valor é da classe str
             valor = float(valor.replace('R$', ''))
         self._preco = valor
 

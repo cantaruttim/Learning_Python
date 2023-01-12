@@ -27,16 +27,21 @@ Ex. class Stack
 #Obs¹ Polimorfismo classe + subclasses
 
 class TV:
-
-    def __init__(self):
+    def __init__(self, tamanho):
         self.cor = 'preta'
         self.canal = 'Netflix'
         self.Ligado = False
-        self.tamanho = 55
+        self.tamanho = tamanho
         self.volume = 10
 
-tv_sala = TV()
-tv_quarto = TV()
+    def mudar_canal(self, novo_canal): #novo_parametro
+        self.canal = novo_canal
+        print(f'Canal alterado para o canal {novo_canal}')
 
-print(tv_sala.cor())
 
+
+tv_sala = TV(tamanho=55)
+tv_quarto = TV(tamanho=70)
+
+print(tv_sala.tamanho)
+print(tv_quarto.tamanho)

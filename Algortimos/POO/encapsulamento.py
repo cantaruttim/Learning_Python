@@ -4,8 +4,8 @@
 public, protected, private
 
 convensões:
-1. _
-2. __
+1. _    : protected
+2. __   : private
 """
 
 class BaseDeDados:
@@ -34,11 +34,13 @@ bd.inserir_cliente(4, 'Fernando')
 # bd.dados = 'Uma outra coisa ... ' quebra a classe inteira
 bd.lista_clientes()
 
-print(bd.dados)
 
 """
 quando temos um underline na frente da instância, 
 recomenda-se não acessar esse atributo ex: _dados (_protected_)
+
+Quando se utiliza os dois underlines, o python renomeia utilizando o nome da classe
+bd._BaseDeDados__dados
 
 """
 

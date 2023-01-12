@@ -63,49 +63,49 @@ class ContaCorrente:
 
 
     def __init__(self, nome, cpf, agencia, num_conta):
-        self.nome = nome
-        self.cpf = cpf
-        self.saldo = 0 # iniciando o saldo com zero
-        self.limite = None
+        self._nome = nome
+        self._cpf = cpf
+        self._saldo = 0 # iniciando o saldo com zero
+        self._limite = None
         self.agencia = agencia
         self.num_conta = num_conta
-        self.transacoes = []
+        self._transacoes = []
 
     # criando os métodos que representam a conta : consultar saldo, sacar e depositar dinheiro na conta
     # Recomenda-se realizar qualquer ação de uma classe por um atributo da classe
     def consultar_saldo(self):
-        print('Seu saldo atual é de R$ {:,.2f}'.format(self.saldo))
+        print('Seu saldo atual é de R$ {:,.2f}'.format(self._saldo))
 
     def depositar(self, valor):
-        self.saldo += valor
-        self.transacoes.append((valor, self.saldo, ContaCorrente._data_hora()))
+        self._saldo += valor
+        self._transacoes.append((valor, self._saldo, ContaCorrente._data_hora()))
 
 
     def _limite_conta(self):
-        self.limite = -1000 # definindo o valor de limite
-        return self.limite
+        self._limite = -1000 # definindo o valor de limite
+        return self._limite
 
     def sacar(self, valor):
-        if self.saldo - valor < self._limite_conta():
+        if self._saldo - valor < self._limite_conta():
             print('Você não tem saldo suficiente para sacar esse valor')
             self.consultar_saldo() # podemos chamar uma função de um atributo diferente
         else:
-            self.saldo -= valor
-            self.transacoes.append((-valor, self.saldo, ContaCorrente._data_hora()))
+            self._saldo -= valor
+            self._transacoes.append((-valor, self._saldo, ContaCorrente._data_hora()))
 
 
     def consultar_historico(self):
         print("Histórico de Transações")
         print("Valor, Saldo, Data e Hora")
-        for transacao in self.transacoes:
+        for transacao in self._transacoes:
             print(transacao)
 
 
     def transferir(self, valor, conta_destino):
-        self.saldo -= valor
-        self.transacoes.append((-valor, self.saldo, ContaCorrente._data_hora()))
-        conta_destino.saldo += valor
-        conta_destino.transacoes.append((valor, self.saldo, ContaCorrente._data_hora()))
+        self._saldo -= valor
+        self._transacoes.append((-valor, self._saldo, ContaCorrente._data_hora()))
+        conta_destino._saldo += valor
+        conta_destino._transacoes.append((valor, self._saldo, ContaCorrente._data_hora()))
 
 
 

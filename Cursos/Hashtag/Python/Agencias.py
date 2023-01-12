@@ -30,21 +30,52 @@ class Agencia:
     def adicionar_cliente(self, nome, cpf, patrimonio):
         self.clientes.append((nome, cpf, patrimonio))
 
+from random import randint
 
 # Agencia virtual, comum e premium
+# Conceeito de Herança
 
 class AgenciaVirtual(Agencia): # criamos uma subclasse Agencia Virtual
-    pass
+    def __init__(self, site, telefone, cnpj):
+        self.site = site
+        super().__init__(telefone, cnpj, 1000) # precisamos fazer isso para mantermos o valor dos atributos da super classe
+        self.caixa = 1000000
+        self.caixa_paypal = 0
+
+    # Métodos que só existem dentro do escopo da Agência Virtual
+
+    def depositar_paypal(self):
+        pass
+
+    def sacar_paypal(self):
+        pass
+
 
 class AgenciaComum(Agencia):
-    pass
+    def __init__(self, telefone, cnpj):
+        super().__init__(telefone, cnpj, numero=randint(1000, 9999))
+        self.caixa = 1000000
+
 
 class AgenciaPremium(Agencia):
-    pass
+    def __init__(self, telefone, cnpj):
+        super().__init__(telefone, cnpj, numero=randint(1000,9999))
+        self.caixa = 10000000
 
 
 
 
+
+
+agencia_virtual = AgenciaVirtual('www.agenciavirtual.com.br', 976886655, 17890000177)
+print(agencia_virtual.site)
+print(agencia_virtual.caixa)
+
+agencia_comum = AgenciaComum(45678877, 278098887746)
+agencia_comum.verificar_caixa()
+
+agencia_premium = AgenciaPremium(76896655, 18934549897)
+agencia_premium.verificar_caixa()
 
 
 agencia1 = Agencia(22223333, 123213128367, 5467)

@@ -59,7 +59,7 @@ class ContaCorrente:
     def _data_hora():
         fuso_BR = pytz.timezone('Brazil/East')
         horario_BR = datetime.now(fuso_BR)
-        return horario_BR
+        return horario_BR.strftime('%d/%m/%Y %H:%M:%S')
 
 
     def __init__(self, nome, cpf, agencia, num_conta):
@@ -78,7 +78,7 @@ class ContaCorrente:
 
     def depositar(self, valor):
         self.saldo += valor
-        self.transacoes.append(valor, self.saldo, ContaCorrente._data_hora())
+        self.transacoes.append((valor, self.saldo, ContaCorrente._data_hora()))
 
 
     def _limite_conta(self):
@@ -91,7 +91,27 @@ class ContaCorrente:
             self.consultar_saldo() # podemos chamar uma função de um atributo diferente
         else:
             self.saldo -= valor
-            self.transacoes.append(-valor, self.saldo, ContaCorrente._data_hora())
+            self.transacoes.append((-valor, self.saldo, ContaCorrente._data_hora()))
+
+
+    def consultar_historico(self):
+        print("Histórico de Transações")
+        print("Valor, Saldo, Data e Hora")
+        for transacao in self.transacoes:
+            print(transacao)
+
+
+    def transferir(self, valor, conta_destino):
+        self.saldo -= valor
+        self.transacoes.append((-valor, self.saldo, ContaCorrente._data_hora()))
+        conta_destino.saldo += valor
+        conta_destino.transacoes.append((valor, self.saldo, ContaCorrente._data_hora()))
+
+
+
+
+
+
 
 
 # PROGRAMA
@@ -101,10 +121,11 @@ conta.consultar_saldo() # utilizando o método para consultar saldo
 conta.depositar(5000)
 conta.consultar_saldo()
 
-conta.sacar(2000)
-conta.consultar_saldo()
+print('-' * 20)
+conta_gabs = ContaCorrente('Gbariella', '123.958.554 - 11', 4321, 78554)
+conta.transferir(1500, conta_gabs)
 
-conta.sacar(3500)
 conta.consultar_saldo()
-
-conta.depositar(4780)
+conta_gabs.consultar_saldo()
+conta.consultar_historico()
+conta_gabs.consultar_historico()

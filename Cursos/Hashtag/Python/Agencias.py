@@ -73,8 +73,6 @@ class AgenciaPremium(Agencia):
 
 
 
-
-
 agencia_virtual = AgenciaVirtual('www.agenciavirtual.com.br', 976886655, 17890000177)
 print(agencia_virtual.site)
 print(agencia_virtual.caixa)

@@ -55,6 +55,21 @@ import pytz # faz ajuste de fuso-horário
 
 
 class ContaCorrente:
+
+    """
+    Criar um objeto ContaCorrente para gerenciar as contas dos clinetes
+
+    Atributos:
+        nome (str): Nome do cliente
+        cpf (str): CPF do cliente
+        agencia (int): Número da agência responsável
+        num_conta (int): Número da conta do cliente
+        saldo (int): Saldo disponível na conta do cliente
+
+    """
+
+
+
     @staticmethod # nao usa nada da classe. Método Estático
     def _data_hora():
         fuso_BR = pytz.timezone('Brazil/East')
@@ -67,8 +82,8 @@ class ContaCorrente:
         self._cpf = cpf
         self._saldo = 0 # iniciando o saldo com zero
         self._limite = None
-        self.agencia = agencia
-        self.num_conta = num_conta
+        self._agencia = agencia
+        self._num_conta = num_conta
         self._transacoes = []
 
     # criando os métodos que representam a conta : consultar saldo, sacar e depositar dinheiro na conta
@@ -129,3 +144,6 @@ conta.consultar_saldo()
 conta_gabs.consultar_saldo()
 conta.consultar_historico()
 conta_gabs.consultar_historico()
+
+
+# help(ContaCorrente) podemos dar um help na nossa classe e ele exibe a DocString da classe

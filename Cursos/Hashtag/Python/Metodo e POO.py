@@ -52,6 +52,7 @@ print(tv_quarto.tamanho)
 # Sistema de Banco
 from datetime import datetime
 import pytz # faz ajuste de fuso-horário
+from random import randint
 
 
 class ContaCorrente:
@@ -134,17 +135,31 @@ class CartaoCredito:
         return horario_BR
 
     def __init__(self, titular, conta_corrente):
-        self.numero = 123
+        self.numero = randint(1000000000000000, 9999999999999999) #gerando um numero aleatório de cartao
         self.titular = titular
         self.validade = '{}/{}'.format(CartaoCredito._data_hora().month,
                                        CartaoCredito._data_hora().year +4)
-        self.cod_seguranca = None
+        self.cod_seguranca = '{}{}{}'.format(
+                                             randint(0,9),
+                                             randint(0,9),
+                                             randint(0,9)
+                                             )
+        self._senha = '1234'
         self.limite = 1000
         self.conta_corrente = conta_corrente
         conta_corrente._cartoes.append(self)
 
 
-
+    @property # torna a propriedade senha em um atributo
+    def senha(self):
+        pass
+    @senha.setter #recebe um valor
+    def senha(self, valor):
+        if len(valor) == 4 and valor.isnumeric():
+            self._senha = valor
+            print('Senha atualizada com sucesso!')
+        else:
+            print('Nova senha inválida!')
 
 
 # PROGRAMA
@@ -156,8 +171,11 @@ cartao = CartaoCredito('Matheus', conta)
 print(cartao.conta_corrente._num_conta)
 print(conta._cartoes[0].numero) # o/
 print(cartao.validade)
+print(cartao.numero)
+print(f'O codigo de seguranca é : {cartao.cod_seguranca}')
 
-
+cartao.senha = '4568'
+print(f'A nova senha é : {cartao._senha}')
 
 
 

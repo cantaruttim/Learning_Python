@@ -47,11 +47,53 @@ print(tv_sala.tamanho)
 print(tv_quarto.tamanho)
 """
 
+#################################################################################
 
 # Sistema de Banco
 
-class ContaCorrente():
-    def __init__(self, nome, cpf, saldo):
+class ContaCorrente:
+    def __init__(self, nome, cpf, agencia, num_conta):
         self.nome = nome
         self.cpf = cpf
-        self.saldo = saldo
+        self.saldo = 0 # iniciando o saldo com zero
+        self.limite = None
+        self.agencia = agencia
+        self.num_conta = num_conta
+        self.transacoes = []
+
+    # criando os métodos que representam a conta : consultar saldo, sacar e depositar dinheiro na conta
+    # Recomenda-se realizar qualquer ação de uma classe por um atributo da classe
+    def consultar_saldo(self):
+        print('Seu saldo atual é de R$ {:,.2f}'.format(self.saldo))
+
+    def depositar(self, valor):
+        self.saldo += valor
+        self.transacoes.append(valor, self.saldo, data e hora)
+
+
+    def _limite_conta(self):
+        self.limite = -1000 # definindo o valor de limite
+        return self.limite
+
+    def sacar(self, valor):
+        if self.saldo - valor < self._limite_conta():
+            print('Você não tem saldo suficiente para sacar esse valor')
+            self.consultar_saldo() # podemos chamar uma função de um atributo diferente
+        else:
+            self.saldo -= valor
+
+
+# PROGRAMA
+conta = ContaCorrente('Matheus', '123.456.789 - 11', 1234, 34062)
+conta.consultar_saldo() # utilizando o método para consultar saldo
+
+conta.depositar(5000)
+conta.consultar_saldo()
+
+conta.sacar(2000)
+conta.consultar_saldo()
+
+conta.sacar(3500)
+conta.consultar_saldo()
+
+conta.depositar(4780)

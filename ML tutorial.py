@@ -84,7 +84,7 @@ def create_dataset(hm, variance, step=2, correlation=False):
     for i in range(hm):
         y = val + random.randrange(-variance, variance)
         ys.append(y)
-        if correlation and correlation = "pos":
+        if correlation and correlation == "pos":
             val +=step
         elif correlation and correlation == "neg":
             val -= step 
@@ -94,7 +94,7 @@ def create_dataset(hm, variance, step=2, correlation=False):
 # we can chance those values and get different values of variance
 # it'll imply directly if the data is tidy or not to the regression line
 
-xs, ys = create_dataset(40, 40, 2, correlation="pos")
+xs, ys = create_dataset(40, 40, 2, correlation == "pos")
 
 def best_fit_slope_and_intercept(xs, ys):
     m = mean( ((mean(xs) * mean(ys)) - mean(xs*ys)) / ((mean(xs)*mean(xs)) - mean(xs**2)) )

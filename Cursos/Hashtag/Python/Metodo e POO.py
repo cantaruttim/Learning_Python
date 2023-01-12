@@ -85,6 +85,7 @@ class ContaCorrente:
         self._agencia = agencia
         self._num_conta = num_conta
         self._transacoes = []
+        self._cartoes = []
 
     # criando os métodos que representam a conta : consultar saldo, sacar e depositar dinheiro na conta
     # Recomenda-se realizar qualquer ação de uma classe por um atributo da classe
@@ -124,6 +125,23 @@ class ContaCorrente:
 
 
 
+class CartaoCredito:
+
+    @staticmethod
+    def _data_hora():
+        fuso_BR = pytz.timezone('Brazil/East')
+        horario_BR = datetime.now(fuso_BR)
+        return horario_BR
+
+    def __init__(self, titular, conta_corrente):
+        self.numero = 123
+        self.titular = titular
+        self.validade = '{}/{}'.format(CartaoCredito._data_hora().month,
+                                       CartaoCredito._data_hora().year +4)
+        self.cod_seguranca = None
+        self.limite = 1000
+        self.conta_corrente = conta_corrente
+        conta_corrente._cartoes.append(self)
 
 
 
@@ -133,17 +151,18 @@ class ContaCorrente:
 conta = ContaCorrente('Matheus', '123.456.789 - 11', 1234, 34062)
 conta.consultar_saldo() # utilizando o método para consultar saldo
 
-conta.depositar(5000)
-conta.consultar_saldo()
+cartao = CartaoCredito('Matheus', conta)
 
-print('-' * 20)
-conta_gabs = ContaCorrente('Gbariella', '123.958.554 - 11', 4321, 78554)
-conta.transferir(1500, conta_gabs)
+print(cartao.conta_corrente._num_conta)
+print(conta._cartoes[0].numero) # o/
+print(cartao.validade)
 
-conta.consultar_saldo()
-conta_gabs.consultar_saldo()
-conta.consultar_historico()
-conta_gabs.consultar_historico()
+
+
+
+
+
+
 
 
 # help(ContaCorrente) podemos dar um help na nossa classe e ele exibe a DocString da classe

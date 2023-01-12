@@ -50,8 +50,18 @@ print(tv_quarto.tamanho)
 #################################################################################
 
 # Sistema de Banco
+from datetime import datetime
+import pytz # faz ajuste de fuso-horário
+
 
 class ContaCorrente:
+    @staticmethod # nao usa nada da classe. Método Estático
+    def _data_hora():
+        fuso_BR = pytz.timezone('Brazil/East')
+        horario_BR = datetime.now(fuso_BR)
+        return horario_BR
+
+
     def __init__(self, nome, cpf, agencia, num_conta):
         self.nome = nome
         self.cpf = cpf
@@ -68,7 +78,7 @@ class ContaCorrente:
 
     def depositar(self, valor):
         self.saldo += valor
-        self.transacoes.append(valor, self.saldo, data e hora)
+        self.transacoes.append(valor, self.saldo, ContaCorrente._data_hora())
 
 
     def _limite_conta(self):
@@ -81,6 +91,7 @@ class ContaCorrente:
             self.consultar_saldo() # podemos chamar uma função de um atributo diferente
         else:
             self.saldo -= valor
+            self.transacoes.append(-valor, self.saldo, ContaCorrente._data_hora())
 
 
 # PROGRAMA

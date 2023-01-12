@@ -44,11 +44,13 @@ class AgenciaVirtual(Agencia): # criamos uma subclasse Agencia Virtual
 
     # Métodos que só existem dentro do escopo da Agência Virtual
 
-    def depositar_paypal(self):
-        pass
+    def depositar_paypal(self, valor):
+        self.caixa -= valor
+        self.caixa_paypal += valor
 
     def sacar_paypal(self):
-        pass
+        self.caixa_paypal -= valor
+        self.caixa += valor
 
 
 class AgenciaComum(Agencia):

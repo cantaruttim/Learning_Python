@@ -25,7 +25,7 @@ Ex. class Stack
 ######################################################################################
 
 #Obs¹ Polimorfismo classe + subclasses
-
+"""
 class TV:
     def __init__(self, tamanho):
         self.cor = 'preta'
@@ -45,3 +45,13 @@ tv_quarto = TV(tamanho=70)
 
 print(tv_sala.tamanho)
 print(tv_quarto.tamanho)
+"""
+
+
+# Sistema de Banco
+
+class ContaCorrente():
+    def __init__(self, nome, cpf, saldo):
+        self.nome = nome
+        self.cpf = cpf
+        self.saldo = saldo

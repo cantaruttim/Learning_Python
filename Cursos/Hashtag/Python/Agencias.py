@@ -31,6 +31,22 @@ class Agencia:
         self.clientes.append((nome, cpf, patrimonio))
 
 
+# Agencia virtual, comum e premium
+
+class AgenciaVirtual(Agencia): # criamos uma subclasse Agencia Virtual
+    pass
+
+class AgenciaComum(Agencia):
+    pass
+
+class AgenciaPremium(Agencia):
+    pass
+
+
+
+
+
+
 agencia1 = Agencia(22223333, 123213128367, 5467)
 agencia1.caixa = 8777666
 print(agencia1.verificar_caixa())
@@ -41,3 +57,7 @@ print(agencia1.emprestimos)
 
 agencia1.adicionar_cliente('Matheus', 123324312, 600000)
 print(agencia1.clientes)
+
+
+agenciaVirtual = AgenciaVirtual(33342134,1789287328,1)
+print(agenciaVirtual)

@@ -60,3 +60,4 @@ conta = cria_conta('123-4', 'Matheus', 120.0, 1000.0)
 deposita(conta, 500)
 extrato(conta)
 
+help(cria_conta)

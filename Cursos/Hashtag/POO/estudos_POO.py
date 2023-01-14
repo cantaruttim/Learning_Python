@@ -17,8 +17,17 @@ class Meu_Objeto:
 # Chamando os construtores e atributos
 
 a = Meu_Objeto()
+
+"""
+
+# chamando um método de dentro da minha classe
 a.imprime()
+
+# printando algumas atributos da classe
 print(a.peso)
 print(a.endereco)
 
 # help(Meu_Objeto)
+
+
+"""

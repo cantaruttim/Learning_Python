@@ -16,6 +16,21 @@ class Conta:
     Tem como objetivo proteger os atributos de manipulações estravagantes, como por exemplo
         Sacar um valor que não esteja disponível na conta;
         Deixa o código mais estruturado e limpo.
+        Além de deixar mais claro e flexível na hora de programar. Pois assim como outras linguagens
+    Python é uma linguagem que é construído por meio da Orientação a Objeto, identificando classes e métodos
+    que podemos utilizar por meio do entendimento da POO.
+
+
+
+    Observe que no método __init__() estamos inicializando o valor de limite com 1000,
+    ou seja, determinamos um valor base inicial para cada conta (regra de negócio).
+    Sendo assim, ao criar uma variável referência do objeto Conta, podemos chamar a classe
+    da seguinte forma:
+
+    ` def __init__(self, numero, titular, saldo, limite=1000.00):
+            <código omitido>                                      `
+
+    `conta = Conta('1345-9', 'Matheus', 1500)`
 
 
 
@@ -29,9 +44,9 @@ class Conta:
 
 
     """
-    def __init__(self, numero, titular, saldo, limite):
+    def __init__(self, numero, titular, saldo, limite=1000.00):
         self.numero = numero
-        self.titular = titular
+        self.titular = cliente
         self.saldo = saldo
         self.limite = limite
         print('Este é o método inicializador')
@@ -78,11 +93,48 @@ class Conta:
 
 
 
+"""
 
+A classe cliente será responsável por criar as instâncias de clientes que serão 
+vinculados a uma conta.
+
+"""
+
+class Cliente:
+
+    def __init__(self, nome, titular, cpf):
+        self.nome = nome
+        self.titular = titular
+        self.cpf = cpf
 
 
 
 # from conta import Conta
+
+"""
+TUDO EM PYTHON É UM OBJETO! sempre que utilizamos uma função em Python ou método que recebe
+parâmetros, estamos passando objetos como argumentos.
+
+Portanto podemos entender que um programa orientado a objeto é um grande conjunto de classes
+que vai se comunicar delegando responsabilidades para quem for mais apto a realizar determinada tarefa.
+A classe Banco delega para a classe Conta que delega para a classe Cliente. Esse sistema, portanto, coabora
+trocando mensagens entre si.
+
+
+class Banco
+    class Conta
+        class Cliente
+            
+
+"""
+
+cliente = Cliente('Matheus', 'Matheus', 123456789)
+conta = Conta('123-4', cliente, 1500.00)
+
+print(conta.titular.nome)
+
+print(type(conta.numero)) # <class 'str'>
+print(type(conta.saldo)) # <class 'float'>
 
 """
 Quando criamos uma variável para associar ao Objeto Conta, na verdade, essa variável 
@@ -92,16 +144,31 @@ Portanto, conta e sonho são variáveis referência do Objeto Conta.
 
 """
 
-conta = Conta('1345-9', 'Matheus', 1500, 3500)
-sonho = Conta('1345-10', 'Matheus', 10000, 4000)
+" Agor apodemos passar um cliente como parâmetro à criação de uma conta"
+
+cliente = Cliente('Matheus', 'Matheus', 123456789)
+conta = Conta('123-4', cliente, 1500)
+
+print(conta.titular.nome)
+
+
+
+"""
+conta = Conta('1345-9', 'Matheus', 1500)
+sonho = Conta('1345-10', 'Matheus', 10000)
 
 print(id(conta)) # 2692262297168
 print(id(sonho)) # 2692262297072
 
 
 conta.transfere_para(sonho, 550.00)
+
 print(sonho.saldo)
 
+
+print(sonho.limite)
+
+"""
 
 """
 
@@ -113,7 +180,7 @@ Obs¹: O operador == compara se as variáveis referências encontram-se no mesmo
 e não se eles tem o mesmo valor. 
 
 """
-
+"""
 c1 = Conta('1234-5', 'Matheus', 500.00, 120.00)
 c2 = Conta('1234-5', 'Matheus', 500.00, 120.00)
 if (c1==c2):
@@ -123,7 +190,7 @@ else:
 
 ">>> Contas em endereços diferentes"
 
-
+"""
 """
 conta = sonho
 

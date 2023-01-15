@@ -56,8 +56,6 @@ class Conta:
         self.saldo += valor
 
 
-
-
     def saca(self, valor):
         if (self.saldo < valor):
             return False
@@ -66,12 +64,11 @@ class Conta:
             return True
 
 
-
     def extrato(self):
         print('Número: {}, \nSaldo: {}'.format(self.numero, self.saldo))
 
 
-    def transfere(self, destino, valor): # conta destino e o valor a ser transferido
+    def transfere_para(self, destino, valor): # conta destino e o valor a ser transferido
         retirou = self.saca(valor)
         if (retirou == False):
             return False
@@ -100,6 +97,11 @@ sonho = Conta('1345-10', 'Matheus', 10000, 4000)
 
 print(id(conta)) # 2692262297168
 print(id(sonho)) # 2692262297072
+
+
+conta.transfere_para(sonho, 550.00)
+print(sonho.saldo)
+
 
 """
 

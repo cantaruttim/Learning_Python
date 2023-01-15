@@ -56,6 +56,8 @@ class Conta:
         self.saldo += valor
 
 
+
+
     def saca(self, valor):
         if (self.saldo < valor):
             return False
@@ -67,6 +69,19 @@ class Conta:
 
     def extrato(self):
         print('Número: {}, \nSaldo: {}'.format(self.numero, self.saldo))
+
+
+    def transfere(self, destino, valor): # conta destino e o valor a ser transferido
+        retirou = self.saca(valor)
+        if (retirou == False):
+            return False
+        else:
+            destino.deposita(valor)
+            return True
+
+
+
+
 
 
 
@@ -92,9 +107,26 @@ Quando atribuimos conta = sonho,
 temos duas instâncias que estão fazendo referência
 a um mesmo objeto. Sendo assim os id serão iguais
 
+Obs¹: O operador == compara se as variáveis referências encontram-se no mesmo endereço de memória
+e não se eles tem o mesmo valor. 
+
 """
 
+c1 = Conta('1234-5', 'Matheus', 500.00, 120.00)
+c2 = Conta('1234-5', 'Matheus', 500.00, 120.00)
+if (c1==c2):
+    print('Contas iguais')
+else:
+    print('Contas em endereços diferentes')
+
+">>> Contas em endereços diferentes"
+
+
+"""
 conta = sonho
 
 print(id(conta)) # 2462778293792
 print(id(sonho)) # 2462778293792
+
+"""
+

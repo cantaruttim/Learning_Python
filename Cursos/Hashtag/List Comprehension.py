@@ -11,3 +11,7 @@ impostos = []
 for item in preco:
     impostos.append(item * 0.03)
 print(impostos)
+
+
+impostos_lc = [ preco * 0.3 for preco in preco]
+print(impostos_lc)

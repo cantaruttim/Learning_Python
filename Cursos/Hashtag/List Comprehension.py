@@ -116,5 +116,6 @@ print(bonus_lc)
 Pontos a se considerar
 
 1. Uso do enumarete em listas
+2. Sintáxe do LC
 
 """

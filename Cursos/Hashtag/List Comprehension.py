@@ -67,3 +67,54 @@ print(min(listas21_2))
 # nesse caso, adicionamos o valor do produto assim como o nome do produto.
 listas21_2_produtos = [(vendas21,produto) for produto, vendas21, vendas22 in vendas_produtos]
 print(listas21_2_produtos)
+
+
+
+######## 
+
+
+# Aplicando condicional no LC
+
+
+meta = 1000
+vendas = [4500, 550.25, 156, 30200]
+produtos = ['vinho', 'cafeteira', 'microondas', 'iphone 3']
+
+
+produtos_acima_meta = []
+for i, produto in enumerate(produtos):
+    if vendas[i] > meta:
+        produtos_acima_meta.append(produto)
+
+
+produtos_acima_meta_lc = [produto for i, produto in enumerate(produtos) if vendas[i] > meta]
+#print(produtos_acima_meta_lc)
+
+# Alterando o resultado final 
+
+vendedores = {'Maria':1200, 'Carlos':820, 'Antônia': 1750, 'Matheus':950}
+meta = 1000
+
+bonus = []
+
+for item in vendedores:
+    if vendedores[item] > meta:
+        # encontrando o valor de 10% do valor da venda de cada vendedor
+        bonus.append(vendedores[item] * .1)
+    else:
+        bonus.append(0)
+
+#print(bonus)
+
+
+
+bonus_lc = [ vendedores[item] * .1 if vendedores[item] > meta else 0 for item in vendedores ]
+print(bonus_lc)
+
+
+"""
+Pontos a se considerar
+
+1. Uso do enumarete em listas
+
+"""

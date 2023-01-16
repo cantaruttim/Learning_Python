@@ -1,3 +1,5 @@
+import datetime
+
 class Conta:
 
     """
@@ -106,6 +108,21 @@ class Cliente:
         self.nome = nome
         self.titular = titular
         self.cpf = cpf
+
+
+
+class Historico:
+
+    def __init__(self):
+        self.data_abertura = datetime.datetime.now()
+        self.transacoes = []
+
+    def imprime(self):
+        print('A data da abertura é: {}'.format(self.data_abertura))
+        print('Histórico de transações: ')
+
+        for t in self.transacoes:
+            print("-", t)
 
 
 

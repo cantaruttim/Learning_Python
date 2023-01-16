@@ -62,3 +62,8 @@ print(listas21_2)
 
 print(max(listas21_2))
 print(min(listas21_2))
+
+
+# nesse caso, adicionamos o valor do produto assim como o nome do produto.
+listas21_2_produtos = [(vendas21,produto) for produto, vendas21, vendas22 in vendas_produtos]
+print(listas21_2_produtos)

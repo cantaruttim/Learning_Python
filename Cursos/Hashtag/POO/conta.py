@@ -48,9 +48,10 @@ class Conta:
     """
     def __init__(self, numero, titular, saldo, limite=1000.00):
         self.numero = numero
-        self.titular = cliente
+        self.titular = Cliente
         self.saldo = saldo
         self.limite = limite
+        self.historico = Historico()
         print('Este é o método inicializador')
 
     """
@@ -71,6 +72,7 @@ class Conta:
 
     def deposita(self, valor):
         self.saldo += valor
+        self.historico.transacoes.append("Depósito de R$ {}".format(valor))
 
 
     def saca(self, valor):
@@ -78,11 +80,12 @@ class Conta:
             return False
         else:
             self.saldo -= valor
+            self.historico.transacoes.append("Saque de R$ {}".format(valor))
             return True
-
 
     def extrato(self):
         print('Número: {}, \nSaldo: {}'.format(self.numero, self.saldo))
+        self.historico.transacoes.append("Tirou extrado-saldo de R$ {}".format(self.saldo))
 
 
     def transfere_para(self, destino, valor): # conta destino e o valor a ser transferido
@@ -92,8 +95,8 @@ class Conta:
         else:
             destino.deposita(valor)
             return True
-
-
+            self.historico.transacoes.append("Transferência de R$ {} para conta {}".format(valor, destino.numero))
+            return True
 
 """
 
@@ -112,6 +115,13 @@ class Cliente:
 
 
 class Historico:
+
+    """
+
+    A classe Histórico compoe a classe Conta.
+    Chama-se portanto de Composição.
+    
+    """
 
     def __init__(self):
         self.data_abertura = datetime.datetime.now()
@@ -144,7 +154,7 @@ class Banco
             
 
 """
-
+"""
 cliente = Cliente('Matheus', 'Matheus', 123456789)
 conta = Conta('123-4', cliente, 1500.00)
 
@@ -154,13 +164,39 @@ print(type(conta.numero)) # <class 'str'>
 print(type(conta.saldo)) # <class 'float'>
 
 """
+"""
+# Testando a class Historico
+
+Cliente1 = Cliente('Matheus', 'Alberto', "24356644554")
+Cliente2 = Cliente('Giuliana', 'Gonçalves', '2222222222222-22')
+
+conta1 = Conta('123-4', Cliente1, 1000.00)
+conta2 = Conta('123-5', Cliente2, 1000.00)
+
+conta1.deposita(350.00)
+conta1.saca(50.00)
+
+conta1.transfere_para(conta2, 120.00)
+conta1.extrato()
+
+
+conta1.historico.imprime()
+print(conta1.saldo)
+conta1.extrato()
+
+conta2.historico.imprime()
+
+
+"""
+
+"""
 Quando criamos uma variável para associar ao Objeto Conta, na verdade, essa variável 
 não guarda o objeto, e sim uma maneira de acessá-lo, que chamaos de referência (o self)
 
 Portanto, conta e sonho são variáveis referência do Objeto Conta.
 
 """
-
+"""
 " Agor apodemos passar um cliente como parâmetro à criação de uma conta"
 
 cliente = Cliente('Matheus', 'Matheus', 123456789)
@@ -168,7 +204,7 @@ conta = Conta('123-4', cliente, 1500)
 
 print(conta.titular.nome)
 
-
+"""
 
 """
 conta = Conta('1345-9', 'Matheus', 1500)
@@ -216,3 +252,8 @@ print(id(sonho)) # 2462778293792
 
 """
 
+# mostra os métodos de uma classe
+
+#print(dir(Conta))
+#print(Conta.__dict__)
+#print(vars(Conta))

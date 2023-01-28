@@ -60,10 +60,18 @@ caixa_texto.grid(row=5,column=0, sticky="NSWE")
 
 
 def buscar_multiplas_cotacoes():
-    pass
+    texto = caixa_texto.get("1.0", tk.END)
+    lista_moedas = texto.split('\n')
+    mensagem_cotacoes = []
 
+    for item in lista_moedas:
+        cotacao = dicionario_cotacoes.get(item)
 
+        if cotacao:
+            mensagem_cotacoes.append(f'{item}:{cotacao}')
 
+    mensagem4 = tk.Label(text='\n'.join(mensagem_cotacoes))
+    mensagem4.grid(row=6,column=1)
 
 
 botao_multiplo = tk.Button(text="Buscar Cotações", command=buscar_multiplas_cotacoes)

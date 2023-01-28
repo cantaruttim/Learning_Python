@@ -1,4 +1,6 @@
 import tkinter as tk
+from tkinter import ttk
+
 
 janela = tk.Tk()
 
@@ -16,8 +18,8 @@ mensagem2.grid(row=1,column=0)
 
 # Entry: caixa de texto para o usuário
 
-moeda = tk.Entry()
-moeda.grid(row=1, column=1)
+# moeda = tk.Entry()
+# moeda.grid(row=1, column=1)
 
 
 # Criando o botão
@@ -28,6 +30,12 @@ dicionario_cotacoes = {
     "Euro" : 6.70,
     "Bitcoin" : 20000.00
 }
+
+# Criando uma lista suspensa
+
+moedas = list(dicionario_cotacoes.keys())
+moeda = ttk.Combobox(janela, values=moedas)
+moeda.grid(row=1, column=1)
 
 
 def buscar_cotacao():
@@ -43,5 +51,21 @@ def buscar_cotacao():
 botao = tk.Button(text="Buscar Cotação", command=buscar_cotacao)
 botao.grid(row=2, column=1)
 
+
+mensagem3 = tk.Label(text='Para mais moedas, digite uma moeda em cada linha')
+mensagem3.grid(row=4, column=0, columnspan=2)
+
+caixa_texto = tk.Text(width=10, height=5)
+caixa_texto.grid(row=5,column=0, sticky="NSWE")
+
+
+def buscar_multiplas_cotacoes():
+
+    
+
+
+
+
+botao_multiplo = tk.Button(text="Buscar Cotações", command=buscar_multiplas_cotacoes)
 
 janela.mainloop()

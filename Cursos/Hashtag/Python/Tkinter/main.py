@@ -60,12 +60,15 @@ caixa_texto.grid(row=5,column=0, sticky="NSWE")
 
 
 def buscar_multiplas_cotacoes():
+    pass
 
-    
 
 
 
 
 botao_multiplo = tk.Button(text="Buscar Cotações", command=buscar_multiplas_cotacoes)
+botao_multiplo.grid(row=5, column=1)
+
+
 
 janela.mainloop()

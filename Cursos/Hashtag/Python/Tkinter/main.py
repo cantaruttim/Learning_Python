@@ -20,5 +20,28 @@ moeda = tk.Entry()
 moeda.grid(row=1, column=1)
 
 
+# Criando o botão
+
+
+dicionario_cotacoes = {
+    "Dólar" : 5.47,
+    "Euro" : 6.70,
+    "Bitcoin" : 20000.00
+}
+
+
+def buscar_cotacao():
+    moeda_preenchida = moeda.get()
+    cotacoes_moedas = dicionario_cotacoes.get(moeda_preenchida)
+    mensagem_cotacao = tk.Label(text='Cotação não encontrada')
+    mensagem_cotacao.grid(row=3, column=0, columnspan=2)
+
+    if cotacoes_moedas:
+        mensagem_cotacao["text"] = f"A Cotação da {moeda_preenchida} é de {cotacoes_moedas} reais"
+
+
+botao = tk.Button(text="Buscar Cotação", command=buscar_cotacao)
+botao.grid(row=2, column=1)
+
 
 janela.mainloop()

@@ -3,6 +3,8 @@ import tkinter as tk
 janela = tk.Tk()
 
 janela.title("Cotação de Moedas")
+
+# redimensionando as linhas e as columas de forma automática: weight = 1
 janela.rowconfigure(0, weight=1)
 janela.columnconfigure([0, 1], weight=1)
 

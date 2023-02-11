@@ -1,1 +1,0 @@
-chave_api = "DOI9IOEWB2O3PGDD"

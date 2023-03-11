@@ -13,6 +13,9 @@ Contínuas
 	São obtidos de uma medição
 	Ex: Altura de um prédio residencial
 	
+## Construíndo uma Distribuição Discreta
+
+
 	
 	
 	

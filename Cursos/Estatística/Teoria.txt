@@ -15,7 +15,6 @@ Contínuas
 	
 ## Construíndo uma Distribuição Discreta
 
-
 	
 	
 	

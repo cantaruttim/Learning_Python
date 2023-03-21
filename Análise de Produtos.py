@@ -32,76 +32,94 @@ df.info()
 df['vl unit faturado'] = df['vl unit faturado'].str.replace('.' and ',', '')
 df['vl total faturado'] = df['vl total faturado'].str.replace('.' and ',', '')
 
-
-# In[5]:
-
-
 # convertendo propriamentedito o tipo do dado armazenado nas últimas duas colunas
 df['vl total faturado'] = df['vl total faturado'].values.astype('float64')
 df['vl unit faturado'] = df['vl unit faturado'].values.astype('float64')
 
 
-# In[6]:
+# In[5]:
 
 
 df.info()
 
 
-# In[7]:
+# In[6]:
 
 
 df[df['qtd. faturada'] > 1]
 
 
-# In[8]:
+# In[7]:
 
 
 # Check point. Alterado o tipo do dado para numérico (float64)
 df.to_excel('Produtos.xlsx')
 
 
-# In[9]:
+# In[8]:
 
 
 df['qtd. faturada'].values
 
 
-# In[10]:
+# In[9]:
 
 
 df[df['qtd. faturada'] > 1]
 
 
-# In[17]:
+# In[43]:
 
 
-for i in range(df['qtd. faturada']):
-    while (df['qtd. faturada'] != i or df['qtd. faturada'] == i):
+i = 0
+j = 0 
+
+for i in df.values:
+    for j in df.values:
         
-        df = df.loc[i]
-    i += 1
+        while i and j != range(df):
+            
+            df_novo[i][j] = df.iloc[i][j]
+            
+            i += 1
+            j += 1
 
 
-# In[24]:
+# In[19]:
 
 
 for i in range(df['qtd. faturada']):
+    for j in range(df['qtd. faturada']):
+        
+        df_novo[i][j] = df.iloc[i][j]
+        
+        if i > 1:
+            
+            df['vl total faturado unitário'] = df['vl total faturado'] / df['qtd. faturada']
+return True
+       
+
+
+# In[12]:
+
+
+for i in df['qtd. faturada']:
     #print(i)
     
     # quero copiar o valor da linha 
-    while i > 1 and ((df['qtd. faturada'] < i) or (df['qtd. faturada'] == 1)) :
-        for i in range(df):
-            
-            df = df.loc[i]
-
+    while i > 1 and df['qtd. faturada'] == 1:
+        df_novo[i] = df.iloc[i]    
+        
         if i > 1 :
             # transformando o valor do preço para um preço unitário para as quantidades maiores que 1
             df['vl total faturado unitário'] = df['vl total faturado'] / df['qtd. faturada']
             # print(df)
+        else:
+            break
     i += 1
 
 
-# In[25]:
+# In[ ]:
 
 
 df.shape

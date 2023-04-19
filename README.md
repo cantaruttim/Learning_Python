@@ -4,15 +4,9 @@ Neste repositório você pode acompanhar meus estudos assim como algumas matéri
 
 O repositório é divido conforme eu acredito que fique mais claro de entender as relações entre as bibliotecas e conforme as aulas que são de programação. No momento o repositório está dividido conforme as pastas a seguir
   
-<dl>
- <dt>Algoritmos</dt>
-    <dd>Estrutura de Dados</dd>
-    <dd>Inteligência Artificial</dd>
-    <dd>Programas</dd>
- <dt>Bibliotecas</dt>
-    <dd>Matemática</dd>
-    <dd>Matplotlib</dd>
- <dt>Cursos concluídos</dt>
- <dt>Machine Learning com Python</dt>
-  
-</dl>
+
+1. [Programação com Python](https://github.com/cantaruttim/Learning_Python)
+    * Para a programação em Banco, vamos nos atentar a implementação PL/pgSQL com o SGBD PostgreSQL
+        - [Algorítmos](https://github.com/cantaruttim/Learning_Python/tree/main/Algor%C3%ADtimos)
+        - [Cursos](https://github.com/cantaruttim/Learning_Python/tree/main/Cursos)
+        - [Áreas](https://github.com/cantaruttim/Learning_Python/tree/main/%C3%81reas)

@@ -7,4 +7,4 @@ O repositório é divido conforme eu acredito que fique mais claro de entender a
 
 1. [Programação com Python](https://github.com/cantaruttim/Learning_Python)
     * Para a programação em Banco, vamos nos atentar a implementação PL/pgSQL com o SGBD PostgreSQL
-        - [Algorítmos](https://github.com/cantaruttim/Learning_Python/tree/main/Al
+        - [Algoritmos](https://github.com/cantaruttim/Learning_Python/tree/main/Al
